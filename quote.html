@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website - Random Quote</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+        blockquote { font-size: 1.5em; margin: 20px; }
+        button { padding: 5px 10px; }
+        nav a { margin: 0 15px; text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="quote.html">Random Quote</a>
+    </nav>
+
+    <h1>Motivational Quote</h1>
+
+    <blockquote id="quote"></blockquote>
+    <button onclick="generateQuote()">New Quote</button>
+
+    <script>
+        const quotes = [
+            "Believe you can and you're halfway there. – Theodore Roosevelt",
+            "Your time is limited, don't waste it living someone else's life. – Steve Jobs",
+            "The only way to do great work is to love what you do. – Steve Jobs",
+            "If you can dream it, you can achieve it. – Zig Ziglar",
+            "The future belongs to those who believe in the beauty of their dreams. – Eleanor Roosevelt"
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = quotes[randomIndex];
+        }
+
+        // Generate a quote when the page loads
+        window.onload = generateQuote;
+    </script>
+
+</body>
+</html>
