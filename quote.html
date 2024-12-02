@@ -3,38 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>My Website - Random Quote</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-        blockquote { font-size: 1.5em; margin: 20px; }
-        button { padding: 5px 10px; }
-        nav a { margin: 0 15px; text-decoration: none; color: #333; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="quote.html">Random Quote</a>
+        <div class="container">
+            <h1>My Website</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="quote.html">Random Quote</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <h1>Motivational Quote</h1>
+    <!-- Quote Section -->
+    <div class="quote-container">
+        <blockquote id="quote">Loading quote...</blockquote>
+        <cite id="author"></cite>
+        <button onclick="generateQuote()">New Quote</button>
+    </div>
 
-    <blockquote id="quote"></blockquote>
-    <button onclick="generateQuote()">New Quote</button>
-
+    <!-- JavaScript for Random Quote Functionality -->
     <script>
         const quotes = [
-            "Believe you can and you're halfway there. – Theodore Roosevelt",
-            "Your time is limited, don't waste it living someone else's life. – Steve Jobs",
-            "The only way to do great work is to love what you do. – Steve Jobs",
-            "If you can dream it, you can achieve it. – Zig Ziglar",
-            "The future belongs to those who believe in the beauty of their dreams. – Eleanor Roosevelt"
+            {
+                text: "Believe you can and you're halfway there.",
+                author: "Theodore Roosevelt"
+            },
+            {
+                text: "Your time is limited, so don't waste it living someone else's life.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "The only way to do great work is to love what you do.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "If you can dream it, you can achieve it.",
+                author: "Zig Ziglar"
+            },
+            {
+                text: "The future belongs to those who believe in the beauty of their dreams.",
+                author: "Eleanor Roosevelt"
+            }
         ];
 
         function generateQuote() {
             const randomIndex = Math.floor(Math.random() * quotes.length);
-            document.getElementById('quote').textContent = quotes[randomIndex];
+            const quote = quotes[randomIndex];
+
+            document.getElementById('quote').textContent = quote.text;
+            document.getElementById('author').textContent = `— ${quote.author}`;
         }
 
         // Generate a quote when the page loads

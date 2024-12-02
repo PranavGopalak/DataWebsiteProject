@@ -1,23 +1,36 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My Website - Home</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-        nav a { margin: 0 15px; text-decoration: none; color: #333; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="quote.html">Random Quote</a>
+        <div class="container">
+            <h1>My Website</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="quote.html">Random Quote</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <h1 id="greeting"></h1>
+    <!-- Hero Section with Dynamic Greeting -->
+    <div class="hero">
+        <h1 id="greeting"></h1>
+    </div>
 
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Welcome!</h2>
+        <p>Experience a beautifully designed website with interactive features.</p>
+    </div>
+
+    <!-- JavaScript for Dynamic Greeting -->
     <script>
         const now = new Date();
         const hours = now.getHours();
